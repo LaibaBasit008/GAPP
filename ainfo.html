@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h1{
+         display: inline-block;
+
+  margin: 90px 550px;
+
+    }
+.button {
+  background-color: #027ad6; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 600px;
+  cursor: pointer;
+}
+
+
+.button4 {border-radius: 12px;}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #027ad6;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="ajax-script.js"></script><script type="text/javascript">
+    $(document).on('click','#showData',function(e){
+      $.ajax({    
+        type: "GET",
+        url: "indexs.php",             
+        dataType: "html",                  
+        success: function(data){                    
+            $("#table-container").html(data); 
+           
+        }
+    });
+});
+</script>
+</head>
+<body>
+
+<h1>GAPP TEST</h1>
+<div>
+  <form action="action_page.php"  method="post">
+    <label for="fname">Department</label>
+    <label for="lname">Dept Id</label>
+    <input type="text" id="lname" name="did" placeholder="Department Name..">
+    <label for="lname">Name</label>
+    <input type="text" id="lname" name="name" placeholder="Department Name..">
+<label for="lname">Teams</label>
+    <input type="text" id="lname" name="teams" placeholder="Teams..">
+<label for="lname">In Charge</label>
+    <input type="text" id="lname" name="inc" placeholder="In Charge..">
+
+  
+    <input type="submit" name="d" >
+  </form>
+</div>
+
+<div>
+  <form action="action_page.php"  method="post">
+    <label for="fname">Teams</label>
+<label for="lname">Team ID</label>
+    <input type="text" id="lname" name="tid" placeholder="People">
+    <label for="lname">People</label>
+    <input type="text" id="lname" name="name" placeholder="People">
+<label for="lname">Team Lead</label>
+    <input type="text" id="lname" name="teams" placeholder="Team Lead">
+
+
+  
+    <input type="submit" name="t" >
+  </form>
+</div>
+
+
+<div>
+  <form action="action_page.php"  method="post">
+    <label for="fname">User</label>
+ <label for="lname">USer ID</label>
+    <input type="text" id="lname" name="uid" placeholder="User Name..">
+    <label for="lname">name</label>
+    <input type="text" id="lname" name="name" placeholder="User Name..">
+
+    <input type="submit" name="u" >
+  </form>
+</div>
+<form></form>
+</body>
+</html>
